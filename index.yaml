@@ -1,0 +1,32 @@
+apiVersion: v1
+entries:
+  faaast-service:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-08-12T12:53:04.423238542Z"
+    description: A Helm chart for Kubernetes
+    digest: 1c88469afe629dfb85eb40f64e1cd2875ed92d3b8b453939629a94057fa3cd53
+    name: faaast-service
+    type: application
+    urls:
+    - https://carlos-schmidt.github.io/async-aas-helm/helm-charts/faaast-service-0.1.1.tgz
+    version: 0.1.1
+  umbrella-mqtt-aas:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-08-12T12:53:04.451106683Z"
+    dependencies:
+    - name: faaast-service
+      repository: file://charts/faaast-service
+      version: 0.1.1
+    - name: aas-basyx-v2-full
+      repository: https://eclipse-basyx.github.io/charts/
+      version: 2.0.6
+    description: A Helm chart for Kubernetes
+    digest: 4a950280768d38ef20fc0b1809fe923facdc7ed0a19ed07c72e2035d2629d0ca
+    name: umbrella-mqtt-aas
+    type: application
+    urls:
+    - https://carlos-schmidt.github.io/async-aas-helm/helm-charts/umbrella-mqtt-aas-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-08-12T12:53:04.42269404Z"
