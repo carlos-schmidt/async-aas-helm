@@ -3,6 +3,16 @@ entries:
   faaast-service:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-09-10T10:44:52.473142589Z"
+    description: A Helm chart for Kubernetes
+    digest: 16d8c8a5f7aa02d6b815e3f764701f9856b22cb41ab4b4ec084dcf637d32f3bf
+    name: faaast-service
+    type: application
+    urls:
+    - https://github.com/carlos-schmidt/async-aas-helm/releases/download/faaast-service-0.1.2/faaast-service-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-08-20T11:55:42.107858517Z"
     description: A Helm chart for Kubernetes
     digest: 3eec07c796a0bd88a4e70a0399a16a27bbfbbb78abf88f4c96ebe8adc3dcc6b0
@@ -12,6 +22,31 @@ entries:
     - https://github.com/carlos-schmidt/async-aas-helm/releases/download/faaast-service-0.1.1/faaast-service-0.1.1.tgz
     version: 0.1.1
   umbrella-mqtt-aas:
+  - apiVersion: v2
+    appVersion: 1.16.1
+    created: "2025-09-10T10:44:52.644180997Z"
+    dependencies:
+    - name: faaast-service
+      repository: file://../../charts/faaast-service
+      version: 0.1.2
+    - name: aas-basyx-v2-full
+      repository: https://eclipse-basyx.github.io/charts/
+      version: 2.0.6
+    - alias: mongodb
+      condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.5.45
+    - name: rabbitmq
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.0.14
+    description: A Helm chart for Kubernetes
+    digest: dbcc8dacce1243f310dc0644f4454d8936f8b781b055cf29d1731c92051ae7c7
+    name: umbrella-mqtt-aas
+    type: application
+    urls:
+    - https://github.com/carlos-schmidt/async-aas-helm/releases/download/umbrella-mqtt-aas-0.1.4/umbrella-mqtt-aas-0.1.4.tgz
+    version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-08-20T11:55:42.32001515Z"
@@ -29,4 +64,4 @@ entries:
     urls:
     - https://github.com/carlos-schmidt/async-aas-helm/releases/download/umbrella-mqtt-aas-0.1.0/umbrella-mqtt-aas-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-20T11:55:42.320028124Z"
+generated: "2025-09-10T10:44:52.644194973Z"
