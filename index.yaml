@@ -3,6 +3,16 @@ entries:
   faaast-registry:
   - apiVersion: v2
     appVersion: 1.1.0
+    created: "2025-11-26T13:22:03.63349019Z"
+    description: A Helm chart for Kubernetes
+    digest: 48b27bedad955bccfab71a3f2d5f12e78b4905bdaffb8093d1d878502bdc0dc8
+    name: faaast-registry
+    type: application
+    urls:
+    - https://github.com/carlos-schmidt/async-aas-helm/releases/download/faaast-registry-0.2.1/faaast-registry-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 1.1.0
     created: "2025-11-17T08:56:08.679693096Z"
     description: A Helm chart for Kubernetes
     digest: 3e09e79d846cb036fdf147fec247bb64eb085c799bad77aebc63dbdf7225928d
@@ -153,6 +163,34 @@ entries:
   umbrella-rabbitmq-aas:
   - apiVersion: v2
     appVersion: 1.16.1
+    created: "2025-11-26T13:22:03.933578644Z"
+    dependencies:
+    - name: faaast-service
+      repository: file://../faaast-service
+      version: 0.1.7
+    - name: faaast-registry
+      repository: file://../faaast-registry
+      version: 0.2.1
+    - name: aas-basyx-v2-full
+      repository: https://eclipse-basyx.github.io/charts/
+      version: 2.1.11
+    - alias: mongodb
+      condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.1.1
+    - name: rabbitmq
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.0.14
+    description: A Helm chart for AAS deployment with RabbitMQ messaging
+    digest: c4c30029af837ba2935df890a7f3abc31e388973d81def4b6e8016f39a6eae55
+    name: umbrella-rabbitmq-aas
+    type: application
+    urls:
+    - https://github.com/carlos-schmidt/async-aas-helm/releases/download/umbrella-rabbitmq-aas-0.5.3/umbrella-rabbitmq-aas-0.5.3.tgz
+    version: 0.5.3
+  - apiVersion: v2
+    appVersion: 1.16.1
     created: "2025-11-17T08:58:16.45533234Z"
     dependencies:
     - name: faaast-service
@@ -260,4 +298,4 @@ entries:
     urls:
     - https://github.com/carlos-schmidt/async-aas-helm/releases/download/umbrella-rabbitmq-aas-0.2.0/umbrella-rabbitmq-aas-0.2.0.tgz
     version: 0.2.0
-generated: "2025-11-17T08:58:16.455381609Z"
+generated: "2025-11-26T13:22:03.933626503Z"
